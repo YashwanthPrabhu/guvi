@@ -8,8 +8,8 @@ public class Hunter53
 	{
 		Scanner in=new Scanner(System.in);
 		System.out.println("Enter string");
-		in.close();
 		String s=in.next();
+		in.close();
 		for(int i=1;i<s.length();i++)
 		{
 			System.out.println(s.charAt(0)+""+s.charAt(i));
