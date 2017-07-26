@@ -1,12 +1,11 @@
 package codekata;
 
-import java.util.HashMap;
+import java.util.TreeMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
-import java.util.TreeSet;
 
 public class Pro47
 {
@@ -18,7 +17,7 @@ public class Pro47
 		int dir=in.nextInt();
 		for(int z=1;z<=dir;z++)
 		{
-			HashMap<String,Integer> hm=new HashMap<String,Integer>();
+			TreeMap<String,Integer> hm=new TreeMap<String,Integer>();
 			System.out.println("Enter the number of entries");
 			int tot=in.nextInt();
 			String[] s1=new String[]{"ABC","DEF","GHI","JKL","MNO","PRS","TUV","WXY"};
@@ -73,21 +72,13 @@ public class Pro47
 			}
 			Set set=hm.entrySet();
 			Iterator itr=set.iterator();
-			TreeSet<String> ts=new TreeSet<String>();
 			while(itr.hasNext())
 			{
 				Map.Entry mp=(Entry) itr.next();
 				if((int) mp.getValue()>1)
 				{
-					String temp="";
-					temp=temp+(String) mp.getKey()+" "+String.valueOf((int) mp.getValue());
-					ts.add(temp);
+					System.out.println(mp.getKey()+" "+mp.getValue());
 				}
-			}
-			Iterator itr1=ts.iterator();
-			while(itr1.hasNext())
-			{
-				System.out.println(itr1.next());
 			}
 		}
 		in.close();
